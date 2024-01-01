@@ -1,0 +1,15 @@
+{
+    "request": {
+      "method": "DELETE",
+      "url": "/v1/project/1",
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 202
+    }
+  }
+  

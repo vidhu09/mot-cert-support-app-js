@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/v1/project/1",
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body" : "{\"name\" : \"Project 1\",\"description\" : \"This is a brief description of Project 1\", \"total\" : 21, \"entries\" : [{\"id\" : \"1\",\"date\" : \"01/01/2023\",\"hours\" : 8, \"description\" : \"Ate cake\"},{\"id\": \"2\",\"date\" : \"02/01/2023\",\"hours\" : 7, \"description\" : \"Ate bread\"},{\"id\" : \"3\",\"date\" : \"03/01/2023\",\"hours\" : 6, \"description\" : \"Ate biscuit\"}]}",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  

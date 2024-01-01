@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/v1/project",
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body" : "[{\"id\" : \"1\", \"name\" : \"Project 1\", \"description\" : \"This is the first project\" },{\"id\" : \"2\", \"name\" : \"Project 2\", \"description\" : \"This is the second project\" }]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+}
+  

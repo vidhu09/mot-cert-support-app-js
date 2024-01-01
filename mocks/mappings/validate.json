@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/v1/auth/validate",
+    "bodyPatterns": [{
+      "equalToJson" : "{\"token\":\"abc123\"}"
+    }]
+  },
+  "response": {
+    "status": 200
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/v1/user",
+      "bodyPatterns": [{
+        "equalToJson" : "{\"username\" : \"Jon\", \"email\" : \"test@email.com\", \"password\" : \"password123\", \"role\" : \"user\"}"
+      }],
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 201
+    }
+  }
+  

@@ -1,0 +1,18 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/v1/project",
+      "bodyPatterns": [{
+        "equalToJson" : "{\"name\" : \"Project 3\", \"description\" : \"Ate cake\"}"
+      }],
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 201
+    }
+  }
+  

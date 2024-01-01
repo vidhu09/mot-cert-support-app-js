@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/v1/user",
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body" : "[{\"id\" : \"1\", \"username\" : \"Mark\", \"email\" : \"mark@test.com\", \"role\" : \"Admin\" },{\"id\" : \"2\", \"username\" : \"Richard\", \"email\" : \"richard@test.com\", \"role\" : \"User\" }]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+}
+  

@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/v1/user/1",
+      "headers" : {
+        "Authorization" : {
+            "contains" : "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body" : "{\"username\" : \"TestAdmin\", \"email\" : \"test@email.com\", \"password\" : \"password123\" }",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+}
+  

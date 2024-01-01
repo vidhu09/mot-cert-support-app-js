@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "url": "/v1/report",
+      "headers": {
+        "Authorization": {
+          "equalTo": "Bearer abc123"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body" : "{\"total\" : 48, \"projects\" : [{\"name\": \"Project 1\", \"hours\": 24},{\"name\": \"Project 2\",\"hours\": 16},{\"name\": \"Project 3\",\"hours\": 8}]}",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+}
+  

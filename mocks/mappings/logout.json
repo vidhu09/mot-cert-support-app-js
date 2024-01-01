@@ -1,0 +1,13 @@
+{
+    "request": {
+      "method": "POST",
+      "url": "/v1/auth/logout",
+      "bodyPatterns": [{
+        "equalToJson" : "{\"token\":\"abc123\"}"
+      }]
+    },
+    "response": {
+      "status": 202
+    }
+  }
+  
