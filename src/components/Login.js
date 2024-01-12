@@ -49,13 +49,13 @@ function Login() {
                         <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                         <div className="form-group">
                             <label htmlFor="email">Email Address</label>
-                            <input type="email" className="form-control" name="email" placeholder="Enter Email" value={email} onChange={onChange} />
+                            <input type="email" data-testid="email" className="form-control" name="email" placeholder="Enter Email" value={email} onChange={onChange} />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control" name="password" placeholder="Enter Password" value={password} onChange={onChange} />
+                            <input type="password" data-testid="password" className="form-control" name="password" placeholder="Enter Password" value={password} onChange={onChange} />
                         </div>
-                        <button type="button" className="btn btn-lg btn-primary btn-block mt-2" onClick={onSubmit}>Sign in</button>
+                        <button type="button" data-testid="sign-in" className="btn btn-lg btn-primary btn-block mt-2" onClick={onSubmit}>Sign in</button>
 
                         {error && <div className="alert alert-danger mt-2">{error}</div>}
                     </form>

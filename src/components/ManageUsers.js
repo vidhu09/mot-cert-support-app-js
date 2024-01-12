@@ -21,10 +21,11 @@ function ManageUsers() {
 
     const createUser = (e) => {
         e.preventDefault();
-        UserAPI.createUser(localStorage.getItem('token'), newUser, (user, error) => {
-            if(error) {
-                setError(error);
-            } else {
+        
+        UserAPI.createUser(localStorage.getItem('token'), newUser, (result, user, error) => {
+            console.log(result);
+            if(result) {
+                console.log(user);
                 setNewUser({
                     username : '',
                     email : '',
@@ -32,6 +33,10 @@ function ManageUsers() {
                     role : 'User'
                 });
                 setError(null);
+                
+                UserAPI.getUsers(localStorage.getItem('token'), (users) => setUsers(users));
+            } else {
+                setError(error);
             }
         });
     }
@@ -40,6 +45,8 @@ function ManageUsers() {
         UserAPI.deleteUser(localStorage.getItem('token'), userId, (response, error) => {
             if(response) {
                 setError('');
+
+                UserAPI.getUsers(localStorage.getItem('token'), (users) => setUsers(users));
             } else {
                 setError(error);
             }

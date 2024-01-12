@@ -28,7 +28,7 @@ export const UserAPI = {
             }
         })
         .then((response) => {
-            if(response.status === 200) {
+            if(response.status === 201) {
                 callback(true);
             } else {
                 callback(false, response.data);
@@ -46,7 +46,7 @@ export const UserAPI = {
             }
         })
         .then((response) => {
-            if(response.status === 200) {
+            if(response.status === 202) {
                 callback(true);
             } else {
                 callback(false, response.data);
@@ -77,13 +77,13 @@ export const UserAPI = {
     },
 
     updateProfile : async (token, id, profileDetails, callback) => {
-        axios.put('/v1/user/profile/' + id, profileDetails, {
+        axios.put('/v1/user/' + id, profileDetails, {
             headers : {
                 Authorization : 'Bearer ' + token
             }
         })
         .then((response) => {
-            if(response.status === 201) {
+            if(response.status === 202) {
                 callback(true);
             } else {
                 callback(false, response.data);

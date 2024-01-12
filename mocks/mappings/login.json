@@ -1,17 +1,16 @@
 {
-    "request": {
-      "method": "POST",
-      "url": "/v1/auth/login",
-      "bodyPatterns": [{
-        "equalToJson" : "{\"email\":\"admin@test.com\",\"password\":\"password123\"}"
-      }]
-    },
-    "response": {
-      "status": 200,
-      "body" : "{\"token\" : \"abc123\",\"admin\": true, \"id\": 1}",
-      "headers": {
-        "Content-Type": "application/json"
-      }
+  "request": {
+    "method": "POST",
+    "url": "/v1/auth/login",
+    "bodyPatterns": [{
+      "equalToJson" : "{\"email\":\"admin@test.com\",\"password\":\"password123\"}"
+    }]
+  },
+  "response": {
+    "status": 200,
+    "body" : "{\"token\" : \"abc123\",\"admin\": true, \"id\": 1}",
+    "headers": {
+      "Content-Type": "application/json"
     }
   }
-  
+}

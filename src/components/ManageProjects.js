@@ -6,7 +6,10 @@ import ProjectAPI from '../requests/ProjectApi';
 function ManageProjects() {
 
     const [projects, setProjects] = useState([]);
-    const [newProject, addProjectDetail]  = useState({});
+    const [newProject, addProjectDetail]  = useState({
+        name : '',
+        description : ''
+    });
     const [error, setError] = useState('');
 
     const onChange = (e) => {
@@ -18,9 +21,10 @@ function ManageProjects() {
         e.preventDefault();
         ProjectAPI.createProject(localStorage.getItem('token'), newProject, (response, error) => {
             if(response) {
-                setProjects([...projects, newProject]);
                 addProjectDetail({ name : '', description : '' });
                 setError('');
+
+                getProjects();
             } else {
                 setError(error);
             }
@@ -31,16 +35,22 @@ function ManageProjects() {
         ProjectAPI.deleteProject(localStorage.getItem('token'), projectId, (response, error) => {
             if(response) {
                 setError('');
+
+                getProjects();
             } else {
                 setError(error);
             }
         });
     }
 
-    useEffect(() => {
+    const getProjects = () => {
         ProjectAPI.getProjects(localStorage.getItem('token'), (projects) => {
             setProjects(projects);
         });
+    }
+
+    useEffect(() => {
+        getProjects();
     }, []);
     
     return (
@@ -65,7 +75,7 @@ function ManageProjects() {
                                             <td>{project.name}</td>
                                             <td>{project.description}</td>
                                             <td>
-                                                <button type="button" className="btn btn-danger" onClick={e => deleteProject(project.id)}>Delete</button>
+                                                <button type="button" data-testid={"del-project-" + project.id} className="btn btn-danger" onClick={e => deleteProject(project.id)}>Delete</button>
                                             </td>
                                         </tr>
                                     ))}
@@ -81,13 +91,13 @@ function ManageProjects() {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="projectName">Project Name</label>
-                                    <input type="text" className="form-control" id="name" value={newProject.name} onChange={onChange}/>
+                                    <input type="text" className="form-control" data-testid="project-name" id="name" value={newProject.name} onChange={onChange}/>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="projectDescription">Project Description</label>
-                                    <textarea className="form-control" id="description" rows="3" value={newProject.description} onChange={onChange}></textarea>
+                                    <textarea className="form-control" data-testid="project-description" id="description" rows="3" value={newProject.description} onChange={onChange}></textarea>
                                 </div>
-                                <button type="button" className="btn btn-primary mt-2" onClick={addProject}>Add Project</button>
+                                <button type="button" data-testid="add-project" className="btn btn-primary mt-2" onClick={addProject}>Add Project</button>
 
                                 {error && <div className="alert alert-danger mt-2">{error}</div>}
                             </form>

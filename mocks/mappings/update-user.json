@@ -1,7 +1,7 @@
 {
     "request": {
       "method": "PUT",
-      "url": "/v1/user/profile/1",
+      "url": "/v1/user/1",
       "headers": {
         "Authorization": {
           "equalTo": "Bearer abc123"

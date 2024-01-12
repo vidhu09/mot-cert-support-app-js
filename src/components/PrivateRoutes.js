@@ -9,6 +9,10 @@ const PrivateRoutes = () => {
 
   useEffect(() => {
     AuthAPI.validateToken(localStorage.getItem('token'), (response) => {
+      if(!response){
+        localStorage.clear();
+      }
+      
       setLogin(response);
     });
   }, [])
