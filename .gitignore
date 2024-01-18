@@ -1,3 +1,7 @@
 node_modules
 .DS_Store
 build
+reports
+*.xml
+allure-*
+test_reports
