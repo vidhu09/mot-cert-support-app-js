@@ -1,5 +1,4 @@
-export const config = 
-{
+exports.config = {
     //
     // ====================
     // Runner Configuration
@@ -50,12 +49,10 @@ export const config =
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-        capabilities: [{
-            browserName: 'chrome',
-            'goog:chromeOptions': {
-                args: ['headless', 'disable-gpu']
-            }
-        }],    
+    capabilities: [{
+        browserName: 'chrome'
+    }],
+
     //
     // ===================
     // Test Configurations
@@ -126,14 +123,14 @@ export const config =
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['dot', 'spec'],
+    reporters: ['spec'],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
-    }
+    },
 
     //
     // =====
@@ -295,4 +292,3 @@ export const config =
     // afterAssertion: function(params) {
     // }
 }
-
