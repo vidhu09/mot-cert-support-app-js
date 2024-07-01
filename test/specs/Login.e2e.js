@@ -10,7 +10,8 @@ describe('My Login application', () => {
     await $('button').click()
 
     const element = await $('.card-title')
-    await expect($(element)).toHaveTextContaining('Projects')
+    console.log(await element.getText());
+    await expect(element).toHaveText('Projects')
    })
 
 })
