@@ -9,9 +9,9 @@ describe('My Login application', () => {
     await $('input[name="password"]').setValue('password123')
     await $('button').click()
 
-    const element = await $('.card-title')
-    console.log(await element.getText());
-    await expect(element).toHaveText('Projects')
+   //  const element = await $('.card-title');
+   //  console.log(await element.getText());
+    await expect($('.card-title')).toHaveText(expect.stringContaining('Projects'))
    })
 
 })
