@@ -33,5 +33,5 @@ jobs:
         if: always()
         with:
           files: |
-           junit.xml
-           reports/e2e-report/*.xml
+            junit.xml
+            reports/e2e-report/*.xml
