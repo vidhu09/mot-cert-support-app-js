@@ -129,7 +129,7 @@ exports.config = {
         outputFileFormat: function(options) {
             return 'junit-report.xml'
         }
-    }]]
+    }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
